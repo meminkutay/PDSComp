@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.pdsdataextractor.MainController"
+      style="-fx-padding: 20; -fx-background-color: #ffffff;"
+      VBox.vgrow="ALWAYS">
+
+    <!-- Section: SDS Data Analysis -->
+    <Label text="SDS (Post-2020) Data Analysis"
+           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #18453B;"/>
+
+    <!-- Scrollable section -->
+    <AnchorPane VBox.vgrow="ALWAYS">
+        <ScrollPane fitToWidth="true" fitToHeight="true"
+                    pannable="true"
+                    AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+            <VBox spacing="5" VBox.vgrow="ALWAYS">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+
+
+                <Label text="Step 1: Select SDS csv files"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #18453B;"/>
+                <Button text="Select SDS csv files" fx:id="btnSelectSDSCSV" onAction="#onChooseClickSDS"
+                        style="-fx-background-color: #18453B; -fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label text="Warning: Make sure each csv file is less than 200MB. If you get out of memory error, split the csv into multiple smaller csv files"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #F0AD4E;"/>
+
+                <ListView fx:id="csvlistSDS"
+                          prefHeight="100.0"
+                          style="-fx-border-color: #18453B; -fx-background-color: #F5F5F5;"
+                          VBox.vgrow="ALWAYS"/>
+
+                <Label text="Step 2: Compute PDS: All rows"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #18453B;"/>
+
+                <Button text="Compute PDS: All rows" fx:id="btnComputePDSfromSDSAllRows"
+                        onAction="#onRunButtonClickSDSallrows"
+                        disable="true"
+                        style="-fx-background-color: #18453B; -fx-text-fill: white; -fx-font-size: 14px;"/>
+
+
+                <Label fx:id="SDS_output_folder" text="Output folder:"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #E67E22;"/>
+
+
+                <Label text="Step 3: Compute PDS: Average over 0.1 mile"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #18453B;"/>
+
+                <Button text="Compute PDS: Average over 0.1 mile" fx:id="btnAveragePDSfromSDS"
+                        onAction="#onRunButtonClickAverageoverpointonemile"
+                        style="-fx-background-color: #18453B; -fx-text-fill: white; -fx-font-size: 14px;"/>
+
+                <Label text="Step 4: Select Pavement List and compute PDS for the pavement List"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #18453B;"/>
+
+                <HBox spacing="10">
+                    <Button text="Select Pavement List" fx:id="btnSelectPavementlistpost2020"
+                            onAction="#onSelectPavementsPost2020"
+                            style="-fx-background-color: #18453B; -fx-text-fill: white; -fx-font-size: 14px;"/>
+                    <Button text="Compute PDS: Pavement List" fx:id="btnRunButtonClickPost2020"
+                            onAction="#onComputePDSPavementList2020"
+                            disable="true"
+                            style="-fx-background-color: #18453B; -fx-text-fill: white; -fx-font-size: 14px;"/>
+                </HBox>
+
+                <Button text="Quit" onAction="#onQuitButtonClick"
+                        style="-fx-background-color: #D9534F; -fx-text-fill: white; -fx-font-size: 14px;"/>
+
+                <Label fx:id="statustext" text="Status"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #18453B;"/>
+
+            </VBox>
+        </ScrollPane>
+    </AnchorPane>
+</VBox>

@@ -1,0 +1,15 @@
+.tab-pane {
+    -fx-background-color: white;  /* Ensures the entire TabPane is white */
+}
+
+.tab-content-area {
+    -fx-background-color: white;  /* Ensures the tab content area is white */
+}
+
+.tab-header-area {
+    -fx-background-color: white;  /* Ensures the tab header area is white */
+}
+
+.tab {
+    -fx-background-color: white;  /* Ensures each tab is also white */
+}

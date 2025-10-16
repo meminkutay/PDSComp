@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.pdsdataextractor.MainController"
+      stylesheets="@style.css"
+      style="-fx-padding: 20; -fx-background-color: #ffffff;">
+
+
+    <!-- Title & Logo Container -->
+    <VBox alignment="CENTER" spacing="5">
+        <!-- Title -->
+        <Label text="PDSComp"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #18453B;"/>
+
+        <!-- Subtitle -->
+        <Label text="Pavement Distress Score Computer"
+               style="-fx-font-size: 16px; -fx-text-fill: #18453B;"/>
+
+        <!-- Logo / Banner Placeholder -->
+        <ImageView fx:id="logoImageView" fitWidth="600" fitHeight="120" preserveRatio="true"/>
+
+    </VBox>
+
+    <!-- Tab Pane Below Title -->
+    <TabPane stylesheets="@style.css">
+        <tabs>
+            <!-- Tab for Pre-2019 Data -->
+            <Tab text="PD/AD (Pre-2019) Data" closable="false">
+                <fx:include source="pre2019tab.fxml"/>
+            </Tab>
+
+            <!-- Tab for SDS Data -->
+            <Tab text="SDS (Post-2020) Data" closable="false">
+                <fx:include source="sdsdatatab.fxml"/>
+            </Tab>
+
+        </tabs>
+    </TabPane>
+
+</VBox>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="500.0" prefWidth="800.0" spacing="15"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.pdsdataextractor.MainController"
+      style="-fx-padding: 20; -fx-background-color: #ffffff;">
+
+
+    <!-- Section: Pre-2019 Data Analysis -->
+    <Label text="Pre-2019 Data Analysis"
+           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #18453B;"/>
+
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="200.0" prefWidth="800.0">
+        <VBox spacing="10">
+
+            <!-- Action Buttons -->
+            <HBox spacing="10">
+                <Label text="Step 1: Select PD/AD csv Files"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #18453B;"/>
+
+            </HBox>
+
+
+            <HBox spacing="10">
+
+                <Button text="Select PD/AD csv Files" onAction="#onChooseClick"
+                        style="-fx-background-color: #18453B; -fx-text-fill: white; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <VBox spacing="10">
+
+                <Label text="Step 2: Select Pavement List and compute PDS for the pavement List"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #18453B;"/>
+                <HBox spacing="10">
+
+                    <Button text="Select Pavement List" fx:id="btnSelectPavementlistpre2019"
+                            onAction="#onSelectPavementsClick"
+                            disable="true"
+                            style="-fx-background-color: #18453B; -fx-text-fill: white; -fx-font-size: 14px;"/>
+                    <Button text="Compute PDS: Pavement List" fx:id="btnRunButtonClickPre2019"
+                            onAction="#onRunButtonClick"
+                            disable="true"
+                            style="-fx-background-color: #18453B; -fx-text-fill: white; -fx-font-size: 14px;"/>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="10">
+
+                <Label fx:id="HMA_pvmtlist_path" text="Pavement List:"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #E67E22;"/>
+
+                <Label fx:id="HMA_pvmtlist_surftype" text="Surface Type:"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #E67E22;"/>
+
+            </VBox>
+
+            <HBox spacing="10">
+
+                <Button text="Quit" onAction="#onQuitButtonClick"
+                        style="-fx-background-color: #D9534F; -fx-text-fill: white; -fx-font-size: 14px;"/>
+            </HBox>
+
+
+            <!-- Status Label -->
+            <Label fx:id="statustext" text="Status"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #18453B;"/>
+
+            <!-- File List -->
+            <ListView fx:id="csvlist"
+                      prefHeight="200.0" prefWidth="480.0"
+                      style="-fx-border-color: #18453B; -fx-background-color: #F5F5F5;"/>
+
+        </VBox>
+    </AnchorPane>
+
+
+</VBox>
