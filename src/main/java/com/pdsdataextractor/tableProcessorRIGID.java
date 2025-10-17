@@ -393,16 +393,13 @@ public class tableProcessorRIGID {
                                                       String BMP,
                                                       String EMP) {
 
+        // Revised per Dan's comments 10/16/2025
 
         Set<Integer> pdcodes_TransverseCrack = new HashSet<>(Arrays.asList(102, 105, 107, 112, 113, 712, 713, 501));
         Set<Integer> pdcodes_LongitudinalZone3Crack = new HashSet<>(Arrays.asList(219, 228, 231, 738, 741, 501));
 
-//        Set<Integer> pdcodes_LongitudinalZone2Crack = new HashSet<>(Arrays.asList(206, 212, 214, 227, 230, 737, 501));
-//        Set<Integer> pdcodes_LongitudinalZone4Crack = new HashSet<>(Arrays.asList(207, 213, 215, 229, 232, 740, 742, 501));
-//
-        // Corrected per Dan Sokolnicki's comments on October 15, 2025
-        Set<Integer> pdcodes_LongitudinalZone2Crack = new HashSet<>(Arrays.asList(206, 212, 213, 227, 230, 737, 740, 501));
-        Set<Integer> pdcodes_LongitudinalZone4Crack = new HashSet<>(Arrays.asList(207, 214, 215, 229, 232, 739, 742, 501));
+        Set<Integer> pdcodes_LongitudinalZone2Crack = new HashSet<>(Arrays.asList(206, 214, 215, 229, 232, 739, 742, 501));
+        Set<Integer> pdcodes_LongitudinalZone4Crack = new HashSet<>(Arrays.asList(207, 212, 213, 227, 230, 737, 740, 501));
 
         Set<Integer> pdcodes_TransverseJointSpall = new HashSet<>(Arrays.asList(106, 706, 501));
 

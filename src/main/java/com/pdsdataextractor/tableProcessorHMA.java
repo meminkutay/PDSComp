@@ -377,6 +377,7 @@ public class tableProcessorHMA {
                                                       String BMP,
                                                       String EMP) {
 
+        // Revised per Dan's comments 10/16/2025
 
         Set<Integer> pdcodes_TransverseCrack_low = new HashSet<>(Arrays.asList(101, 103, 104, 110, 114, 701, 703, 704, 501));
         // FOR MEDIUM AND HIGH, ELIMINATED THE TRANSVERSE TEAR
@@ -384,8 +385,8 @@ public class tableProcessorHMA {
 
         Set<Integer> pdcodes_LongitudinalZone3Crack = new HashSet<>(Arrays.asList(202, 218, 722, 501));
 
-        Set<Integer> pdcodes_LongitudinalZone2Crack = new HashSet<>(Arrays.asList(204, 724, 501));
-        Set<Integer> pdcodes_LongitudinalZone4Crack = new HashSet<>(Arrays.asList(205, 725, 501));
+        Set<Integer> pdcodes_LongitudinalZone2Crack = new HashSet<>(Arrays.asList(205, 725, 501));
+        Set<Integer> pdcodes_LongitudinalZone4Crack = new HashSet<>(Arrays.asList(204, 724, 501));
 
         Set<Integer> pdcodes_AlligatorCrackZone2 = new HashSet<>(Arrays.asList(210, 221, 224, 235, 731, 501));
         Set<Integer> pdcodes_AlligatorCrackZone4 = new HashSet<>(Arrays.asList(220, 222, 234, 730, 501));

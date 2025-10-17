@@ -12,7 +12,7 @@ public class MainApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("main_gui_settings.fxml")); // Ensure correct path
         Scene scene = new Scene(fxmlLoader.load(), 800, 900);
-        stage.setTitle("PDSComp V0.1");
+        stage.setTitle("PDSComp V0.2");
 
         // Ensure the controller is properly initialized AFTER loading FXML
         MainController controller = fxmlLoader.getController();
